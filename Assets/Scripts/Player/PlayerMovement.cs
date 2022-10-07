@@ -10,18 +10,17 @@ public class PlayerMovement : MonoBehaviour
         get { return moveSpeed; }
         set { moveSpeed = value; }
     }
+    private Rigidbody2D playerRigitBody;
 
     public void Move(Vector2 direction) {
-
+        playerRigitBody.velocity = direction * moveSpeed;
     }
 
-    void Start()
-    {
-        
+    private void Start() {
+        playerRigitBody = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
-    {
-        
+    private void Update() {
+        transform.Translate(JoystickController.Position * moveSpeed);
     }
 }
