@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update() {
-        transform.Translate(JoystickController.Position * moveSpeed);
+        //transform.Translate(JoystickController.Position * moveSpeed);
+        playerRigitBody.velocity = JoystickController.Position * moveSpeed;
     }
 }

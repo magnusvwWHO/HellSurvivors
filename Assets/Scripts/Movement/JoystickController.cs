@@ -34,4 +34,5 @@ public class JoystickController : MonoBehaviour, IDragHandler, IEndDragHandler
     private void Start() {
         instance = this;
     }
+
 }
